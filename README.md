@@ -4,9 +4,9 @@ Client -> Gunicorn -> Flask --CRUD--> MySQL
 
 
 ### tasks
-- docker/kubernetes pod 구분해서 개발
-- 환결별로 Database setup 방식 정리
-- 개발/운영용 개발 방식 정리
+1. Docker 환경을 위한 개발
+2. Kubernetes 환경을 위한 개발
+3. 개발/운영 환경별 세팅
 
 ### Prerequisite - MySQL
 - MySQL 8.2.0

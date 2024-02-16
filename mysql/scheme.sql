@@ -16,3 +16,6 @@ VALUES ('sonny','totenham',10);
 
 INSERT INTO player (name,team,goal)
 VALUES ('kane','totenham',10);
+
+INSERT INTO player (name,team,goal)
+VALUES ('hyukjun','totenham',11);

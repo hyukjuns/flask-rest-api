@@ -1,12 +1,8 @@
+# 베이스이미지
 FROM mysql:8.2.0
 
-# DB Setup 1: Create Database, User/PW
-ENV MYSQL_ROOT_PASSWORD=
-ENV MYSQL_DATABASE=
-ENV MYSQL_USER=
-ENV MYSQL_PASSWORD=
-
-# DB Setup 2: Add SQLFile to entrypoint
+# 데이터베이스 셋업
 ADD scheme.sql /docker-entrypoint-initdb.d
 
+# MySQL 포트 명시
 EXPOSE 3306
