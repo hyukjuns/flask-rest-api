@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.9-slim
 
 # Create non-root user and working directory
 RUN useradd --create-home --shell /bin/bash python
@@ -16,13 +16,9 @@ RUN pip install -r requirements.txt
 
 # Setting PATH and DB Info
 ENV PATH="/home/python/.local/bin:$PATH"
-ENV MYSQL_DATABASE_USER="" \
-    MYSQL_DATABASE_PASSWORD="" \
-    MYSQL_DATABASE_DB="" \
-    MYSQL_DATABASE_HOST=""
 
 # Expression PORT
 EXPOSE 8000
 
 # Run Application
-CMD [ "gunicorn", "-c", "gunicorn_config.py", "app:app" ]
+CMD [ "gunicorn", "-c", "gunicorn_config.py", "main:app" ]
