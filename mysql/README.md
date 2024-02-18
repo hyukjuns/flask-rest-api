@@ -1,18 +1,28 @@
 ### Database Inited MySQL
-데이터베이스 스키마를 사용해서 데이터베이스를 셋업한 MySQL 도커 이미지 생성 
+초기 데이터가 셋업된 MySQL 도커 이미지 
+
+- 환경변수 주입을 통한 DB 생성 및 User 생성
+- .sql 스크립트 파일을 사용한 초기 테이블 셋업
+- REST API 서버로부터 오는 요청 처리
+
+### Dockerhub
+[hyukjun/mysql-8.2.0-init-scheme](https://hub.docker.com/repository/docker/hyukjun/mysql-8.2.0-init-scheme/general)
+
+### Base Image Version
+- mysql:8.2.0
 
 ### Usage
-```
+```bash
 # 이미지 빌드
-docker build -t <IMAGE>:<TAG> .
+docker build -t IMAGE:TAG .
 
 # 이미지 실행
 docker run -d -p 3306:3306 \
---env MYSQL_DATABASE=<DATABASE_NAME> \
---env MYSQL_ROOT_PASSWORD=<ROOT_PASSWORD> \
---env MYSQL_USER=<DATABASE_USER_NAME> \
---env MYSQL_PASSWORD=<DATABASE_USER_PASSWORD> \
-<IMAGE>:<TAG>
+--env MYSQL_DATABASE=DATABASE_NAME \
+--env MYSQL_ROOT_PASSWORD=ROOT_PASSWORD \
+--env MYSQL_USER=DATABASE_USER_NAME \
+--env MYSQL_PASSWORD=DATABASE_USER_PASSWORD \
+IMAGE:TAG
 ```
 
 ### 참고내용
@@ -33,7 +43,7 @@ docker run -d -p 3306:3306 \
     - `MYSQL_PASSWORD` -> App 에서 사용할 데이터베이스 유저의 패스워드
 
 ### SQL 쿼리 참고
-```
+```bash
 # SELECT
 SELECT * FROM table;
 
