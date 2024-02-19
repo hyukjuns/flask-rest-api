@@ -16,6 +16,9 @@
 # 이미지 빌드
 docker build -t IMAGE:TAG .
 
+# linux/amd64 아키텍쳐로 빌드
+docker build --platform linux/amd64 -t IMAGE:TAG
+
 # 이미지 실행
 docker run -d -p 3306:3306 \
 --env MYSQL_DATABASE=DATABASE_NAME \

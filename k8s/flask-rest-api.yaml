@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: flask-api
+  name: flask-api
+  namespace: api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask-api
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: flask-api
+    spec:
+      containers:
+      - image: hyukjun/flask-rest-api-amd64:1.0
+        name: flask-rest-api
+        resources:
+          requests:
+            cpu: 100m
+            memory: 500Mi
+          limits:
+            cpu: 100m
+            memory: 500Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-svc
+  namespace: api
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8000
+      targetPort: 8000
+  selector:
+    app: flask-api
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-ingress
+  namespace: api
+spec:
+  ingressClassName: nginx-external
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: api-svc
+            port:
+              number: 8000
+        path: /api/player
+        pathType: Prefix
