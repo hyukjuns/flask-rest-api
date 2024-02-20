@@ -2,9 +2,10 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mysql-headless
+  namespace: api
 spec:
-  tpye: ClusterIP
-  ClusterIP: None
+  type: ClusterIP
+  clusterIP: None
   selector:
     app: mysql
   ports:
@@ -12,17 +13,18 @@ spec:
       protocol: TCP
       targetPort: 3306
 ---
-apiVersion: v1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mysql-player
+  namespace: api
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: mysql
   serviceName: 
-  tempate:
+  template:
     metadata:
       name: mysql-api
       labels:
@@ -32,7 +34,7 @@ spec:
         - image: hyukjun/mysql-8.2.0-init-scheme-amd64:1.0
           name: mysql
           ports:
-          - containerPorts: 3306
+          - containerPort: 3306
           resources:
             requests:
               cpu: 500m
@@ -40,6 +42,9 @@ spec:
             limits:
               cpu: 500m
               memory: 500Mi
+          envFrom:
+            - secretRef:
+                name: mysql-context
           volumeMounts:
             - name: playerdb-vol
               mountPath: /var/lib/mysql
@@ -47,8 +52,8 @@ spec:
   - metadata:
       name: playerdb-vol
     spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: azuredisk-ssd-lrs
+      accessModes: [ "ReadWriteMany" ]
+      storageClassName: azurefile
       resources:
         requests:
           storage: 512Mi
