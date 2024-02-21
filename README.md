@@ -102,3 +102,4 @@ gunicorn --config gunicorn_config.py MODULE:INSTANCE
 ### 앞으로 해야할 일
 - kubernetes 환경에 맞게 구성
 - docker-compose 구성
+- CICD 붙히기
