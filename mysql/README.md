@@ -1,4 +1,4 @@
-### Database Inited MySQL
+# Database Inited MySQL
 초기 데이터가 셋업된 MySQL 도커 이미지 
 
 - 환경변수 주입을 통한 DB 생성 및 User 생성
