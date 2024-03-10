@@ -29,15 +29,16 @@ python3.9 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 
-# 로컬 구동
-python main.py # 디버그 모드
-gunicorn -c gunicorn_config.py main:app # 운영 모드
-
 # 로컬 구동시 사전에 환경변수 주입 필요
 export MYSQL_DATABASE_HOST=
 export MYSQL_DATABASE_DB=
 export MYSQL_DATABASE_USER=
 export MYSQL_DATABASE_PASSWORD=
+
+# 로컬 구동
+python main.py # 디버그 모드
+gunicorn -c gunicorn_config.py main:app # 운영 모드
+
 ```
 
 ### Docker 참고사항
