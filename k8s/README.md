@@ -18,7 +18,7 @@ API Server와 MySQL을 Kubernetes Object로 배포
     k create secret generic api-mysql-context -n api --from-env-file=api-mysql.env
 
     # For MySQL
-    k create secret generic mysql-context -n api --from-env-file=mysql.env
+    k create secret generic mysql-context -n db --from-env-file=mysql.env
 
     ```
 

@@ -19,7 +19,7 @@ metadata:
 spec:
   ingressClassName: nginx-external
   rules:
-  - host: myplayer.com
+  - host: hyukjuntest.site
     http:
       paths:
       - backend:
@@ -53,7 +53,7 @@ spec:
         app: flask-api
     spec:
       containers:
-      - image: hyukjun/flask-rest-api-amd64:1.0
+      - image: devaksacr001.azurecr.io/flask-rest-api-amd64:1.0
         name: flask-rest-api
         resources:
           requests:
