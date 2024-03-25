@@ -99,8 +99,3 @@ gunicorn --config gunicorn_config.py MODULE:INSTANCE
 - [mysql connector python 8.3.0](https://dev.mysql.com/doc/connector-python/en/)
 
 - [*excute 사용시 변수 지정 방법 - 리스트, 튜플, 딕셔너리 방법 존재](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html)
-
-### 앞으로 해야할 일
-- kubernetes 환경에 맞게 구성
-- docker-compose 구성
-- CICD 붙히기
