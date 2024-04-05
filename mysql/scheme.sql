@@ -12,10 +12,10 @@ CREATE TABLE player (
 );
 
 INSERT INTO player (name,team,goal)
-VALUES ('sonny','totenham',10);
+VALUES ('sonny','spurs',10);
 
 INSERT INTO player (name,team,goal)
-VALUES ('kane','totenham',10);
+VALUES ('kane','spurs',5);
 
 INSERT INTO player (name,team,goal)
-VALUES ('hyukjun','totenham',11);
+VALUES ('hyukjun','spurs',1);

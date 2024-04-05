@@ -1,3 +1,4 @@
+# Python 3.9 version
 FROM python:3.9-slim
 
 # Create non-root user and working directory
@@ -14,7 +15,7 @@ COPY ./*.py .
 # Install Packages
 RUN pip install -r requirements.txt
 
-# Setting PATH and DB Info
+# Setting PATH
 ENV PATH="/home/python/.local/bin:$PATH"
 
 # Expression PORT

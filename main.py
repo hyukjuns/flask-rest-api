@@ -53,6 +53,7 @@ def get_player():
          print(e)
          return "Fail to get player's info.", 400
 
+# POST
 @app.route("/api/player", methods=['POST'])
 def create_player():
         try:

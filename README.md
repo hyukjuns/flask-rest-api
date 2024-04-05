@@ -89,15 +89,16 @@ python3.9 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 
-# 로컬 구동
-python main.py # 디버그 모드
-gunicorn -c gunicorn_config.py main:app # 운영 모드
-
 # 로컬 구동시 사전에 환경변수 주입 필요
 export MYSQL_DATABASE_HOST=
 export MYSQL_DATABASE_DB=
 export MYSQL_DATABASE_USER=
 export MYSQL_DATABASE_PASSWORD=
+
+# 로컬 구동
+python main.py # 디버그 모드
+gunicorn -c gunicorn_config.py main:app # 운영 모드
+
 ```
 
 ### Docker 참고사항
@@ -158,7 +159,10 @@ gunicorn --config gunicorn_config.py MODULE:INSTANCE
 - [mysql connector python 8.3.0](https://dev.mysql.com/doc/connector-python/en/)
 
 - [*excute 사용시 변수 지정 방법 - 리스트, 튜플, 딕셔너리 방법 존재](https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html)
+<<<<<<< HEAD
 
 ### ToDo Task
 - docker-compose
 - CI/CD
+=======
+>>>>>>> 26a8d3cfaafc823c54c0d88eeb41d4407e30b8c8
