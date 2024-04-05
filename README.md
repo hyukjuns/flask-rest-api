@@ -164,5 +164,3 @@ gunicorn --config gunicorn_config.py MODULE:INSTANCE
 ### ToDo Task
 - docker-compose
 - CI/CD
-=======
->>>>>>> 26a8d3cfaafc823c54c0d88eeb41d4407e30b8c8
