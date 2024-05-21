@@ -24,7 +24,8 @@ MySQL 8.2.0
 
 - [hyukjun/mysql-8.2.0-init-scheme-amd64](https://hub.docker.com/repository/docker/hyukjun/mysql-8.2.0-init-scheme-amd64/general)
 
-
+## MySQL 빌드 참고사항
+[README](mysql/README.md)
 ## Usage (Kubernetes)
 [README](k8s/README.md)
 

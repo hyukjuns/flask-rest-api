@@ -1,4 +1,4 @@
-# Database Inited MySQL
+# Database
 초기 데이터가 셋업된 MySQL 도커 이미지 
 
 - 환경변수 주입을 통한 DB 생성 및 User 생성
@@ -28,7 +28,7 @@ docker run -d -p 3306:3306 \
 IMAGE:TAG
 ```
 
-### 참고내용
+### 참고사항
 
 - 데이터베이스 초기 셋업 방법
     
