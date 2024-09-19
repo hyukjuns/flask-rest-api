@@ -1,6 +1,10 @@
 # Flask REST API Server with MySQL
 > Client -> Gunicorn -> Flask --CRUD--> MySQL
 
+### TODO
+- 좀 더 간결하게 만들기
+- main.py에서 db table 읽어오는 부분 환경변수 처리하기
+
 ## Overview
 ```markdown
 # Description
